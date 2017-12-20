@@ -1,0 +1,27 @@
+from selenium import webdriver
+# noinspection PyUnresolvedReferences
+from selenium.webdriver.common.keys import Keys
+# noinspection PyUnresolvedReferences
+from selenium.webdriver.common.by import By
+import time
+# create a new Firefox session
+driver = webdriver.Firefox()
+driver.implicitly_wait(30)
+driver.maximize_window()
+
+
+driver.get("https://jira.etb.tieto.com/")
+
+logop = driver.find_element_by_id("user-options")
+logop.click()
+usern = driver.find_element_by_id("login-form-username")
+usern.send_keys('mylogin')
+time.sleep(1)
+userpassw = driver.find_element_by_id("login-form-password")
+userpassw.send_keys('mypassword')
+time.sleep(5)
+godash = driver.find_element_by_id('greenhopper_menu')
+godash.click()
+time.sleep(5)
+testboard = driver.find_element_by_id('rapidb_lnk_2405_lnk')
+testboard.click()
