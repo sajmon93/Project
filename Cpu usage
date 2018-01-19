@@ -1,0 +1,22 @@
+*** Settings ***
+Library           Process
+Library           OperatingSystem
+Library           String
+Library           Collections
+
+*** Variables ***
+
+*** Test Cases ***
+TC 1.2 Szymon
+    Get Data
+
+*** Keywords ***
+Get Data
+    Run top -b -n 1 > cpu.txt
+    ${output}= 	Get file cpu.txt
+    ${line1}=	Get Line 	${output}	6
+    ${line2}=	Get Line 	${output}	7
+    ${line3}=	Get Line 	${output}	8
+    ${line4}=	Get Line 	${output}	9
+    ${line5}=	Get Line 	${output}	10
+    ${line6}=	Get Line 	${output}	11
