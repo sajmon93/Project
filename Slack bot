@@ -1,0 +1,22 @@
+from selenium import webdriver
+# noinspection PyUnresolvedReferences
+from selenium.webdriver.common.keys import Keys
+# noinspection PyUnresolvedReferences
+from selenium.webdriver.common.by import By
+import time
+# create a new Firefox session
+driver = webdriver.Firefox()
+driver.implicitly_wait(30)
+driver.maximize_window()
+
+
+driver.get("https://tietodevops.slack.com/messages/G7NB6F4KB/convo/G7NB6F4KB-1518708113.000790/")
+
+logfield = driver.find_element_by_id("email")
+logfield.send_keys('mylogin')
+passfield = driver.find_element_by_id("password")
+passfield.send_keys('mypassword')
+signin = driver.find_element_by_id("signin_btn")
+signin.click()
+channel = driver.find_element_by_link_text("/messages/G7NB6F4KB")
+channel.click()
