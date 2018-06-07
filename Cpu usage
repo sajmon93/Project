@@ -20,3 +20,4 @@ Get Data
     ${line4}=	Get Line 	${output}	9
     ${line5}=	Get Line 	${output}	10
     ${line6}=	Get Line 	${output}	11
+    ${line7}=   Get Line    ${output}   12
